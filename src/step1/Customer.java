@@ -31,16 +31,17 @@ class Customer {
 			Rental each = (Rental) iterator.next();
 			// determine amounts for each line
 
-			// add frequent renter points
-			frequentRenterPoints++;
-			// add bonus for a two day new release rental
-			if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1)
-				frequentRenterPoints++;
 			// show figures
 			result += "\t" +  each.getCharge() + "(" + each.getMovie().getTitle() + ")" + "\n";
 
 		}
 
+
+		for (Rental rental : rentals) {
+			frequentRenterPoints++;
+			if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1)
+				frequentRenterPoints++;
+		}
 		
 		result += "Amount owed is " + getTotalCharge() + "\n";
 		result += "You earned " + frequentRenterPoints + " frequent renter pointers";
