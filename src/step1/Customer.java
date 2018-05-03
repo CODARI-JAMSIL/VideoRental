@@ -23,7 +23,6 @@ class Customer {
 	};
 
 	public String statement() {
-		double totalAmount = 0;
 		int frequentRenterPoints = 0;
 		Iterator<Rental> iterator = rentals.iterator();
 		String result = "Rental Record for " + getName() + "\n";
@@ -40,9 +39,15 @@ class Customer {
 			// show figures
 			result += "\t" +  each.getCharge() + "(" + each.getMovie().getTitle() + ")" + "\n";
 
-			totalAmount += each.getCharge();
 		}
 
+		
+		double totalAmount = 0;
+		for (Rental rental : rentals) {
+			totalAmount += rental.getCharge();
+		}
+		
+		
 		result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
 		result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter pointers";
 
