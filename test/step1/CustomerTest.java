@@ -35,10 +35,8 @@ public class CustomerTest {
 		// GIVEN
 
 		// WHEN
-		String statement = customer.statement();
-
 		// THEN
-		assertThat(statement,
+		assertThat(customer.statement(),
 				is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 
 						+ "Amount owed is 0.0\n" 
 						+ "You earned 0 frequent renter pointers"));
@@ -54,10 +52,8 @@ public class CustomerTest {
 		customer.addRental(rental);
 
 		// WHEN
-		String statement = customer.statement();
-
 		// THEN
-		assertThat(statement, is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 
+		assertThat(customer.statement(), is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 
 						+ "\t2.0(RegularMovie)\n" + "Amount owed is 2.0\n"
 						+ "You earned 1 frequent renter pointers"));
 	}
@@ -71,10 +67,8 @@ public class CustomerTest {
 		customer.addRental(rental);
 
 		// WHEN
-		String statement = customer.statement();
-
 		// THEN
-		assertThat(statement, is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 
+		assertThat(customer.statement(), is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 
 							+ "\t3.5(RegularMovie)\n" 
 							+ "Amount owed is 3.5\n"
 							+ "You earned 1 frequent renter pointers"));
@@ -90,10 +84,8 @@ public class CustomerTest {
 		customer.addRental(rental);
 
 		// WHEN
-		String statement = customer.statement();
-
 		// THEN
-		assertThat(statement, is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 	
+		assertThat(customer.statement(), is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 	
 							+ "\t3.0(NewReleaseMovie)\n" 
 							+ "Amount owed is 3.0\n"
 							+ "You earned 1 frequent renter pointers"));
@@ -109,10 +101,8 @@ public class CustomerTest {
 		customer.addRental(rental);
 
 		// WHEN
-		String statement = customer.statement();
-
 		// THEN
-		assertThat(statement, is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 	
+		assertThat(customer.statement(), is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 	
 							+ "\t6.0(NewReleaseMovie)\n" 
 							+ "Amount owed is 6.0\n"
 							+ "You earned 2 frequent renter pointers"));
@@ -128,10 +118,8 @@ public class CustomerTest {
 		customer.addRental(rental);
 
 		// WHEN
-		String statement = customer.statement();
-
 		// THEN
-		assertThat(statement, is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 
+		assertThat(customer.statement(), is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 
 							+ "\t1.5(ChildrenMovie)\n" 
 							+ "Amount owed is 1.5\n"
 							+ "You earned 1 frequent renter pointers"));
@@ -147,10 +135,8 @@ public class CustomerTest {
 		customer.addRental(rental);
 
 		// WHEN
-		String statement = customer.statement();
-
 		// THEN
-		assertThat(statement, is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 
+		assertThat(customer.statement(), is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 
 								+ "\t3.0(ChildrenMovie)\n" 
 								+ "Amount owed is 3.0\n"
 								+ "You earned 1 frequent renter pointers"));
@@ -177,10 +163,8 @@ public class CustomerTest {
 		customer.addRental(newReleaseMovierental);
 
 		// WHEN
-		String statement = customer.statement();
-
 		// THEN
-		assertThat(statement, is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 
+		assertThat(customer.statement(), is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 
 								+ "\t1.5(ChildrenMovie)\n" 
 								+ "\t3.5(RegularMovie)\n" 
 								+ "\t9.0(NewReleaseMovie)\n" 
@@ -198,10 +182,8 @@ public class CustomerTest {
 		customer.addRental(rental);
 
 		// WHEN
-		String statement = customer.statement();
-
 		// THEN
-		assertThat(statement, is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 
+		assertThat(customer.statement(), is("Rental Record for ∞Ì∞¥¿Ã∏ß\n" 
 								+ "\t0.0(OtherMovie)\n" 
 								+ "Amount owed is 0.0\n"
 								+ "You earned 1 frequent renter pointers"));
