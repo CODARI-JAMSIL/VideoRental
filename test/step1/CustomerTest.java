@@ -7,10 +7,12 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class CustomerTest {
+	
+	Customer customer = new Customer("고객이름");
+
 	@Test
 	public void 고객_생성() {
 		// GIVEN
-		Customer customer = new Customer("고객이름");
 
 		// WHEN
 
@@ -21,7 +23,6 @@ public class CustomerTest {
 	@Test
 	public void 비디오를빌리지않는고객_생성() {
 		// GIVEN
-		Customer customer = new Customer("고객이름");
 
 		// WHEN
 		String statement = customer.statement();
@@ -37,7 +38,6 @@ public class CustomerTest {
 	@Test
 	public void regularMovie2일대여() {
 		// GIVEN
-		Customer customer = new Customer("고객이름");
 		Movie movie = new Movie("RegularMovie", Movie.REGULAR);
 		int daysRented = 2;
 		Rental rental = new Rental(movie, daysRented);
@@ -55,7 +55,6 @@ public class CustomerTest {
 	@Test
 	public void regularMovie3일대여() {
 		// GIVEN
-		Customer customer = new Customer("고객이름");
 		Movie movie = new Movie("RegularMovie", Movie.REGULAR);
 		int daysRented = 3;
 		Rental rental = new Rental(movie, daysRented);
@@ -75,7 +74,6 @@ public class CustomerTest {
 	@Test
 	public void newReleaseMovie1일대여() {
 		// GIVEN
-		Customer customer = new Customer("고객이름");
 		Movie movie = new Movie("NewReleaseMovie", Movie.NEW_RELEASE);
 		int daysRented = 1;
 		Rental rental = new Rental(movie, daysRented);
@@ -95,7 +93,6 @@ public class CustomerTest {
 	@Test
 	public void newReleaseMovie2일대여() {
 		// GIVEN
-		Customer customer = new Customer("고객이름");
 		Movie movie = new Movie("NewReleaseMovie", Movie.NEW_RELEASE);
 		int daysRented = 2;
 		Rental rental = new Rental(movie, daysRented);
@@ -115,7 +112,6 @@ public class CustomerTest {
 	@Test
 	public void childrenMovie3일대여() {
 		// GIVEN
-		Customer customer = new Customer("고객이름");
 		Movie movie = new Movie("ChildrenMovie", Movie.CHILDRENS);
 		int daysRented = 3;
 		Rental rental = new Rental(movie, daysRented);
@@ -135,7 +131,6 @@ public class CustomerTest {
 	@Test
 	public void childrenMovie4일대여() {
 		// GIVEN
-		Customer customer = new Customer("고객이름");
 		Movie movie = new Movie("ChildrenMovie", Movie.CHILDRENS);
 		int daysRented = 4;
 		Rental rental = new Rental(movie, daysRented);
@@ -155,7 +150,6 @@ public class CustomerTest {
 	@Test
 	public void 여러개의비디오를대여() {
 		// GIVEN
-		Customer customer = new Customer("고객이름");
 		Movie childrenMovie = new Movie("ChildrenMovie", Movie.CHILDRENS);
 		Movie regularMovie = new Movie("RegularMovie", Movie.REGULAR);
 		Movie newReleaseMovie = new Movie("NewReleaseMovie", Movie.NEW_RELEASE);
@@ -188,7 +182,6 @@ public class CustomerTest {
 	@Test
 	public void otherMovie4일대여() {
 		// GIVEN
-		Customer customer = new Customer("고객이름");
 		Movie movie = new Movie("OtherMovie", 4);
 		int daysRented = 4;
 		Rental rental = new Rental(movie, daysRented);
