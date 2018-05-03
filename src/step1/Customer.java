@@ -42,8 +42,8 @@ class Customer {
 		}
 
 		
-		result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
-		result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter pointers";
+		result += "Amount owed is " + getTotalCharge() + "\n";
+		result += "You earned " + frequentRenterPoints + " frequent renter pointers";
 
 		return result;
 	}
