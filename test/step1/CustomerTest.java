@@ -50,9 +50,7 @@ public class CustomerTest {
 		int movieType = Movie.REGULAR;
 		int daysRented = 2;
 		
-		Movie movie = new Movie(movieTitle, movieType);
-		Rental rental = new Rental(movie, daysRented);
-		customer.addRental(rental);
+		createRentalFor(movieTitle, movieType, daysRented);
 
 		// WHEN
 		// THEN
@@ -68,9 +66,7 @@ public class CustomerTest {
 		int movieType = Movie.REGULAR;
 		int daysRented = 3;
 		
-		Movie movie = new Movie(movieTitle, movieType);
-		Rental rental = new Rental(movie, daysRented);
-		customer.addRental(rental);
+		createRentalFor(movieTitle, movieType, daysRented);
 
 		// WHEN
 		// THEN
@@ -88,9 +84,7 @@ public class CustomerTest {
 		int movieType = Movie.NEW_RELEASE;
 		int daysRented = 1;
 		
-		Movie movie = new Movie(movieTitle, movieType);
-		Rental rental = new Rental(movie, daysRented);
-		customer.addRental(rental);
+		createRentalFor(movieTitle, movieType, daysRented);
 
 		// WHEN
 		// THEN
@@ -108,9 +102,7 @@ public class CustomerTest {
 		int movieType = Movie.NEW_RELEASE;
 		int daysRented = 2;
 		
-		Movie movie = new Movie(movieTitle, movieType);
-		Rental rental = new Rental(movie, daysRented);
-		customer.addRental(rental);
+		createRentalFor(movieTitle, movieType, daysRented);
 
 		// WHEN
 		// THEN
@@ -128,9 +120,7 @@ public class CustomerTest {
 		int movieType = Movie.CHILDRENS;
 		int daysRented = 3;
 		
-		Movie movie = new Movie(movieTitle, movieType);
-		Rental rental = new Rental(movie, daysRented);
-		customer.addRental(rental);
+		createRentalFor(movieTitle, movieType, daysRented);
 
 		// WHEN
 		// THEN
@@ -148,9 +138,7 @@ public class CustomerTest {
 		int movieType = Movie.CHILDRENS;
 		int daysRented = 4;
 		
-		Movie movie = new Movie(movieTitle, movieType);
-		Rental rental = new Rental(movie, daysRented);
-		customer.addRental(rental);
+		createRentalFor(movieTitle, movieType, daysRented);
 
 		// WHEN
 		// THEN
@@ -159,6 +147,12 @@ public class CustomerTest {
 								+ "Amount owed is 3.0\n"
 								+ "You earned 1 frequent renter pointers"));
 
+	}
+
+	private void createRentalFor(String movieTitle, int movieType, int daysRented) {
+		Movie movie = new Movie(movieTitle, movieType);
+		Rental rental = new Rental(movie, daysRented);
+		customer.addRental(rental);
 	}
 
 	@Test
@@ -199,9 +193,7 @@ public class CustomerTest {
 		int movieType = 4;
 		int daysRented = 4;
 		
-		Movie movie = new Movie(movieTitle, movieType);
-		Rental rental = new Rental(movie, daysRented);
-		customer.addRental(rental);
+		createRentalFor(movieTitle, movieType, daysRented);
 
 		// WHEN
 		// THEN
