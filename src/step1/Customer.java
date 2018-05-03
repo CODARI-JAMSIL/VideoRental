@@ -23,7 +23,6 @@ class Customer {
 	};
 
 	public String statement() {
-		int frequentRenterPoints = 0;
 		Iterator<Rental> iterator = rentals.iterator();
 		String result = "Rental Record for " + getName() + "\n";
 
@@ -37,16 +36,20 @@ class Customer {
 		}
 
 
+		result += "Amount owed is " + getTotalCharge() + "\n";
+		result += "You earned " + getFrequentRenterPoints() + " frequent renter pointers";
+
+		return result;
+	}
+
+	private int getFrequentRenterPoints() {
+		int frequentRenterPoints = 0;
 		for (Rental rental : rentals) {
 			frequentRenterPoints++;
 			if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1)
 				frequentRenterPoints++;
 		}
-		
-		result += "Amount owed is " + getTotalCharge() + "\n";
-		result += "You earned " + frequentRenterPoints + " frequent renter pointers";
-
-		return result;
+		return frequentRenterPoints;
 	}
 
 	private double getTotalCharge() {
