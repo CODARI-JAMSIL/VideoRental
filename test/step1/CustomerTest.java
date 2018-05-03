@@ -46,11 +46,7 @@ public class CustomerTest {
 	@Test
 	public void regularMovie2일대여() {
 		// GIVEN
-		String movieTitle = REGULAR_MOVIE;
-		int movieType = Movie.REGULAR;
-		int daysRented = 2;
-		
-		createRentalFor(movieTitle, movieType, daysRented);
+		createRentalFor(REGULAR_MOVIE, Movie.REGULAR, 2);
 
 		// WHEN
 		// THEN
@@ -62,11 +58,7 @@ public class CustomerTest {
 	@Test
 	public void regularMovie3일대여() {
 		// GIVEN
-		String movieTitle = REGULAR_MOVIE;
-		int movieType = Movie.REGULAR;
-		int daysRented = 3;
-		
-		createRentalFor(movieTitle, movieType, daysRented);
+		createRentalFor(REGULAR_MOVIE, Movie.REGULAR, 3);
 
 		// WHEN
 		// THEN
@@ -80,11 +72,7 @@ public class CustomerTest {
 	@Test
 	public void newReleaseMovie1일대여() {
 		// GIVEN
-		String movieTitle = NEW_RELEASE_MOVIE;
-		int movieType = Movie.NEW_RELEASE;
-		int daysRented = 1;
-		
-		createRentalFor(movieTitle, movieType, daysRented);
+		createRentalFor(NEW_RELEASE_MOVIE, Movie.NEW_RELEASE, 1);
 
 		// WHEN
 		// THEN
@@ -98,11 +86,7 @@ public class CustomerTest {
 	@Test
 	public void newReleaseMovie2일대여() {
 		// GIVEN
-		String movieTitle = NEW_RELEASE_MOVIE;
-		int movieType = Movie.NEW_RELEASE;
-		int daysRented = 2;
-		
-		createRentalFor(movieTitle, movieType, daysRented);
+		createRentalFor(NEW_RELEASE_MOVIE, Movie.NEW_RELEASE, 2);
 
 		// WHEN
 		// THEN
@@ -116,11 +100,7 @@ public class CustomerTest {
 	@Test
 	public void childrenMovie3일대여() {
 		// GIVEN
-		String movieTitle = CHILDREN_MOVIE;
-		int movieType = Movie.CHILDRENS;
-		int daysRented = 3;
-		
-		createRentalFor(movieTitle, movieType, daysRented);
+		createRentalFor(CHILDREN_MOVIE, Movie.CHILDRENS, 3);
 
 		// WHEN
 		// THEN
@@ -134,11 +114,7 @@ public class CustomerTest {
 	@Test
 	public void childrenMovie4일대여() {
 		// GIVEN
-		String movieTitle = CHILDREN_MOVIE;
-		int movieType = Movie.CHILDRENS;
-		int daysRented = 4;
-		
-		createRentalFor(movieTitle, movieType, daysRented);
+		createRentalFor(CHILDREN_MOVIE, Movie.CHILDRENS, 4);
 
 		// WHEN
 		// THEN
@@ -189,11 +165,7 @@ public class CustomerTest {
 	@Test
 	public void otherMovie4일대여() {
 		// GIVEN
-		String movieTitle = OTHER_MOVIE;
-		int movieType = 4;
-		int daysRented = 4;
-		
-		createRentalFor(movieTitle, movieType, daysRented);
+		createRentalFor(OTHER_MOVIE, 4, 4);
 
 		// WHEN
 		// THEN
