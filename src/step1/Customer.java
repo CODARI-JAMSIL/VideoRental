@@ -42,15 +42,17 @@ class Customer {
 		}
 
 		
+		result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
+		result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter pointers";
+
+		return result;
+	}
+
+	private double getTotalCharge() {
 		double totalAmount = 0;
 		for (Rental rental : rentals) {
 			totalAmount += rental.getCharge();
 		}
-		
-		
-		result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-		result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter pointers";
-
-		return result;
+		return totalAmount;
 	}
 }
