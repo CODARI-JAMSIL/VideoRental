@@ -7,7 +7,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class CustomerTest {
-	
 	@Test
 	public void 고객_생성(){
 		//GIVEN
@@ -17,5 +16,21 @@ public class CustomerTest {
 		
 		//THEN
 		assertThat(customer, is(notNullValue()));
+	}
+
+	@Test
+	public void 비디오를빌리지않는고객_생성(){
+		//GIVEN
+		Customer customer = new Customer("고객이름");
+		
+		//WHEN
+		String statement = customer.statement();
+		
+		//THEN
+		assertThat(statement, is("Rental Record for 고객이름\n"
+				+"Amount owed is 0.0\n"
+				+"You earned 0 frequent renter pointers"
+				));
+		
 	}
 }
