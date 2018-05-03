@@ -134,22 +134,11 @@ public class CustomerTest {
 	@Test
 	public void 여러개의비디오를대여() {
 
-		// GIVEN
-		Movie childrenMovie = new Movie(CHILDREN_MOVIE, Movie.CHILDRENS);
-		Movie regularMovie = new Movie(REGULAR_MOVIE, Movie.REGULAR);
-		Movie newReleaseMovie = new Movie(NEW_RELEASE_MOVIE, Movie.NEW_RELEASE);
-		
-		int childrenMoviedaysRented = 3;
-		int regularMoviedaysRented = 3;
-		int newReleaseMoviedaysRented = 3;
+		createRentalFor(CHILDREN_MOVIE, Movie.CHILDRENS, 3);
+		createRentalFor(REGULAR_MOVIE, Movie.REGULAR, 3);
+		createRentalFor(NEW_RELEASE_MOVIE, Movie.NEW_RELEASE, 3);
 
-		Rental childrenMovierental = new Rental(childrenMovie, childrenMoviedaysRented);
-		Rental regularMovierental = new Rental(regularMovie, regularMoviedaysRented);
-		Rental newReleaseMovierental = new Rental(newReleaseMovie, newReleaseMoviedaysRented);
 
-		customer.addRental(childrenMovierental);
-		customer.addRental(regularMovierental);
-		customer.addRental(newReleaseMovierental);
 
 		// WHEN
 		// THEN
