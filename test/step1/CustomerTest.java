@@ -184,4 +184,24 @@ public class CustomerTest {
 								+ "You earned 4 frequent renter pointers"));
 
 	}
+
+	@Test
+	public void otherMovie4일대여() {
+		// GIVEN
+		Customer customer = new Customer("고객이름");
+		Movie movie = new Movie("OtherMovie", 4);
+		int daysRented = 4;
+		Rental rental = new Rental(movie, daysRented);
+		customer.addRental(rental);
+
+		// WHEN
+		String statement = customer.statement();
+
+		// THEN
+		assertThat(statement, is("Rental Record for 고객이름\n" 
+								+ "\t0.0(OtherMovie)\n" 
+								+ "Amount owed is 0.0\n"
+								+ "You earned 1 frequent renter pointers"));
+
+	}
 }
