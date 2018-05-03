@@ -75,4 +75,24 @@ public class CustomerTest {
 		
 	}
 	
+	@Test
+	public void newReleaseMovie1일대여(){
+		//GIVEN
+		Customer customer = new Customer("고객이름");
+		Movie movie = new Movie("NewReleaseMovie", Movie.NEW_RELEASE);
+		int daysRented = 1;
+		Rental rental = new Rental(movie, daysRented);
+		customer.addRental(rental);
+		
+		//WHEN
+		String statement = customer.statement();
+		
+		//THEN
+		assertThat(statement, is("Rental Record for 고객이름\n"
+		        + "\t3.0(NewReleaseMovie)\n" 
+				+"Amount owed is 3.0\n"
+				+"You earned 1 frequent renter pointers"
+				));
+		
+	}
 }
