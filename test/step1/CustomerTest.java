@@ -151,4 +151,37 @@ public class CustomerTest {
 								+ "You earned 1 frequent renter pointers"));
 
 	}
+
+	@Test
+	public void 여러개의비디오를대여() {
+		// GIVEN
+		Customer customer = new Customer("고객이름");
+		Movie childrenMovie = new Movie("ChildrenMovie", Movie.CHILDRENS);
+		Movie regularMovie = new Movie("RegularMovie", Movie.REGULAR);
+		Movie newReleaseMovie = new Movie("NewReleaseMovie", Movie.NEW_RELEASE);
+		
+		int childrenMoviedaysRented = 3;
+		int regularMoviedaysRented = 3;
+		int newReleaseMoviedaysRented = 3;
+
+		Rental childrenMovierental = new Rental(childrenMovie, childrenMoviedaysRented);
+		Rental regularMovierental = new Rental(regularMovie, regularMoviedaysRented);
+		Rental newReleaseMovierental = new Rental(newReleaseMovie, newReleaseMoviedaysRented);
+
+		customer.addRental(childrenMovierental);
+		customer.addRental(regularMovierental);
+		customer.addRental(newReleaseMovierental);
+
+		// WHEN
+		String statement = customer.statement();
+
+		// THEN
+		assertThat(statement, is("Rental Record for 고객이름\n" 
+								+ "\t1.5(ChildrenMovie)\n" 
+								+ "\t3.5(RegularMovie)\n" 
+								+ "\t9.0(NewReleaseMovie)\n" 
+								+ "Amount owed is 14.0\n"
+								+ "You earned 4 frequent renter pointers"));
+
+	}
 }
