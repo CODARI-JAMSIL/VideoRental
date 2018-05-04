@@ -132,8 +132,17 @@ public class CustomerTest {
 	}
 
 	private Movie createMovie(String movieTitle, int movieType) {
-		Movie movie = new Movie(movieTitle, movieType);
-		return movie;
+		switch (movieType) {
+	    case Movie.REGULAR:
+	      return new RegularMovie(movieTitle);
+	    case Movie.NEW_RELEASE:
+	      return new NewReleaseMovie(movieTitle);
+	    case Movie.CHILDRENS:
+	      return new ChildrenMovie(movieTitle);
+	    default:
+	      throw new IllegalArgumentException("Price code is not found");
+	  }
+
 	}
 
 	@Test
