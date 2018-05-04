@@ -126,9 +126,14 @@ public class CustomerTest {
 	}
 
 	private void createRentalFor(String movieTitle, int movieType, int daysRented) {
-		Movie movie = new Movie(movieTitle, movieType);
+		Movie movie = createMovie(movieTitle, movieType);
 		Rental rental = new Rental(movie, daysRented);
 		customer.addRental(rental);
+	}
+
+	private Movie createMovie(String movieTitle, int movieType) {
+		Movie movie = new Movie(movieTitle, movieType);
+		return movie;
 	}
 
 	@Test
