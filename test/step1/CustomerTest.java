@@ -165,7 +165,7 @@ public class CustomerTest {
 
 	}
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void otherMovie4�ϴ뿩() {
 		// GIVEN
 		createRentalFor(OTHER_MOVIE, 4, 4);
