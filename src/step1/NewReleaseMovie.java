@@ -13,4 +13,11 @@ public class NewReleaseMovie extends Movie {
 		return thisAmount;
 	}
 
+	@Override
+	public int frequentRentersFor(int daysRented) {
+		if (daysRented > 1)
+			return 2;
+		return 1;
+	}
+
 }
