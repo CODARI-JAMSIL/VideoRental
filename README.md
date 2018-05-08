@@ -19,3 +19,6 @@
 # Legacy Code Refactoring
 - Legacy Code에서 Code Smell을 발견하고 해결
 - 업무 로직을 고려한 Refactoring 
+
+# 리팩토링 수정 전 ----------> origin 브랜치
+# 리팩토링 수정 후 ----------> refactoring 브랜치
