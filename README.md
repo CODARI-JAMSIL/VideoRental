@@ -1,0 +1,2 @@
+# VideoRental
+VideoRental kata
