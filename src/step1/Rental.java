@@ -1,4 +1,4 @@
-package original;
+package step1;
 
 class Rental {
 	private Movie movie;

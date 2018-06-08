@@ -1,4 +1,4 @@
-package original;
+package step1;
 
 public class Movie {
 	public static final int CHILDRENS = 2;
