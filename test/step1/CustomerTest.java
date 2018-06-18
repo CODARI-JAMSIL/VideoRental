@@ -16,12 +16,12 @@ public class CustomerTest {
 
 	private static final String REGULAR_MOVIE = "RegularMovie";
 
-	private static final String °í°´ÀÌ¸§ = "°í°´ÀÌ¸§";
+	private static final String ê³ ê°ì´ë¦„ = "ê³ ê°ì´ë¦„";
 	
-	Customer customer = new Customer(°í°´ÀÌ¸§);
+	Customer customer = new Customer(ê³ ê°ì´ë¦„);
 
 	@Test
-	public void °í°´_»ı¼º() {
+	public void ê³ ê°_ìƒì„±() {
 		// GIVEN
 
 		// WHEN
@@ -31,38 +31,38 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void ºñµğ¿À¸¦ºô¸®Áö¾Ê´Â°í°´_»ı¼º() {
+	public void ë¹„ë””ì˜¤ë¥¼ë¹Œë¦¬ì§€ì•ŠëŠ”ê³ ê°_ìƒì„±() {
 		// GIVEN
 
 		// WHEN
 		// THEN
 		assertThat(customer.statement(),
-				is("Rental Record for °í°´ÀÌ¸§\n" 
+				is("Rental Record for ê³ ê°ì´ë¦„\n" 
 						+ "Amount owed is 0.0\n" 
 						+ "You earned 0 frequent renter pointers"));
 
 	}
 
 	@Test
-	public void regularMovie2ÀÏ´ë¿©() {
+	public void regularMovie2ì¼ëŒ€ì—¬() {
 		// GIVEN
 		createRentalFor(REGULAR_MOVIE, Movie.REGULAR, 2);
 
 		// WHEN
 		// THEN
-		assertThat(customer.statement(), is("Rental Record for °í°´ÀÌ¸§\n" 
+		assertThat(customer.statement(), is("Rental Record for ê³ ê°ì´ë¦„\n" 
 						+ "\t2.0(RegularMovie)\n" + "Amount owed is 2.0\n"
 						+ "You earned 1 frequent renter pointers"));
 	}
 
 	@Test
-	public void regularMovie3ÀÏ´ë¿©() {
+	public void regularMovie3ì¼ëŒ€ì—¬() {
 		// GIVEN
 		createRentalFor(REGULAR_MOVIE, Movie.REGULAR, 3);
 
 		// WHEN
 		// THEN
-		assertThat(customer.statement(), is("Rental Record for °í°´ÀÌ¸§\n" 
+		assertThat(customer.statement(), is("Rental Record for ê³ ê°ì´ë¦„\n" 
 							+ "\t3.5(RegularMovie)\n" 
 							+ "Amount owed is 3.5\n"
 							+ "You earned 1 frequent renter pointers"));
@@ -70,13 +70,13 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void newReleaseMovie1ÀÏ´ë¿©() {
+	public void newReleaseMovie1ì¼ëŒ€ì—¬() {
 		// GIVEN
 		createRentalFor(NEW_RELEASE_MOVIE, Movie.NEW_RELEASE, 1);
 
 		// WHEN
 		// THEN
-		assertThat(customer.statement(), is("Rental Record for °í°´ÀÌ¸§\n" 	
+		assertThat(customer.statement(), is("Rental Record for ê³ ê°ì´ë¦„\n" 	
 							+ "\t3.0(NewReleaseMovie)\n" 
 							+ "Amount owed is 3.0\n"
 							+ "You earned 1 frequent renter pointers"));
@@ -84,13 +84,13 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void newReleaseMovie2ÀÏ´ë¿©() {
+	public void newReleaseMovie2ì¼ëŒ€ì—¬() {
 		// GIVEN
 		createRentalFor(NEW_RELEASE_MOVIE, Movie.NEW_RELEASE, 2);
 
 		// WHEN
 		// THEN
-		assertThat(customer.statement(), is("Rental Record for °í°´ÀÌ¸§\n" 	
+		assertThat(customer.statement(), is("Rental Record for ê³ ê°ì´ë¦„\n" 	
 							+ "\t6.0(NewReleaseMovie)\n" 
 							+ "Amount owed is 6.0\n"
 							+ "You earned 2 frequent renter pointers"));
@@ -98,13 +98,13 @@ public class CustomerTest {
 	}
 	
 	@Test
-	public void childrenMovie3ÀÏ´ë¿©() {
+	public void childrenMovie3ì¼ëŒ€ì—¬() {
 		// GIVEN
 		createRentalFor(CHILDREN_MOVIE, Movie.CHILDRENS, 3);
 
 		// WHEN
 		// THEN
-		assertThat(customer.statement(), is("Rental Record for °í°´ÀÌ¸§\n" 
+		assertThat(customer.statement(), is("Rental Record for ê³ ê°ì´ë¦„\n" 
 							+ "\t1.5(ChildrenMovie)\n" 
 							+ "Amount owed is 1.5\n"
 							+ "You earned 1 frequent renter pointers"));
@@ -112,13 +112,13 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void childrenMovie4ÀÏ´ë¿©() {
+	public void childrenMovie4ì¼ëŒ€ì—¬() {
 		// GIVEN
 		createRentalFor(CHILDREN_MOVIE, Movie.CHILDRENS, 4);
 
 		// WHEN
 		// THEN
-		assertThat(customer.statement(), is("Rental Record for °í°´ÀÌ¸§\n" 
+		assertThat(customer.statement(), is("Rental Record for ê³ ê°ì´ë¦„\n" 
 								+ "\t3.0(ChildrenMovie)\n" 
 								+ "Amount owed is 3.0\n"
 								+ "You earned 1 frequent renter pointers"));
@@ -132,7 +132,7 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void ¿©·¯°³ÀÇºñµğ¿À¸¦´ë¿©() {
+	public void ì—¬ëŸ¬ê°œì˜ë¹„ë””ì˜¤ë¥¼ëŒ€ì—¬() {
 
 		createRentalFor(CHILDREN_MOVIE, Movie.CHILDRENS, 3);
 		createRentalFor(REGULAR_MOVIE, Movie.REGULAR, 3);
@@ -142,7 +142,7 @@ public class CustomerTest {
 
 		// WHEN
 		// THEN
-		assertThat(customer.statement(), is("Rental Record for °í°´ÀÌ¸§\n" 
+		assertThat(customer.statement(), is("Rental Record for ê³ ê°ì´ë¦„\n" 
 								+ "\t1.5(ChildrenMovie)\n" 
 								+ "\t3.5(RegularMovie)\n" 
 								+ "\t9.0(NewReleaseMovie)\n" 
@@ -152,13 +152,13 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void otherMovie4ÀÏ´ë¿©() {
+	public void otherMovie4ì¼ëŒ€ì—¬() {
 		// GIVEN
 		createRentalFor(OTHER_MOVIE, 4, 4);
 
 		// WHEN
 		// THEN
-		assertThat(customer.statement(), is("Rental Record for °í°´ÀÌ¸§\n" 
+		assertThat(customer.statement(), is("Rental Record for ê³ ê°ì´ë¦„\n" 
 								+ "\t0.0(OtherMovie)\n" 
 								+ "Amount owed is 0.0\n"
 								+ "You earned 1 frequent renter pointers"));
