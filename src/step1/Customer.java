@@ -36,8 +36,9 @@ class Customer {
 			switch (each.getMovie().getPriceCode()) {
 			case Movie.REGULAR:
 				thisAmount += 2;
-				if (each.getDaysRented() > 2)
+				if (each.getDaysRented() > 2) {
 					thisAmount += (each.getDaysRented() - 2) * 1.5;
+				}
 				break;
 				
 			case Movie.NEW_RELEASE:
@@ -46,14 +47,17 @@ class Customer {
 				
 			case Movie.CHILDRENS:
 				thisAmount += 1.5;
-				if (each.getDaysRented() > 3)
+				if (each.getDaysRented() > 3) {
 					thisAmount += (each.getDaysRented() - 3) * 1.5;
+				}
 				break;
 			}
 
 			frequentRenterPoints++;
-			if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1)
+			if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1) {
 				frequentRenterPoints++;
+			}
+			
 			result += "\t" +  String.valueOf(thisAmount) + "(" + each.getMovie().getTitle() + ")" + "\n";
 
 			totalAmount += thisAmount;
